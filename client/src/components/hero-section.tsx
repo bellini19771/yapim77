@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Clapperboard from "./clapperboard";
+
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -39,15 +39,7 @@ export default function HeroSection() {
           />
         </motion.div>
 
-        {/* Clapperboard */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="flex justify-center mb-8"
-        >
-          <Clapperboard />
-        </motion.div>
+        
         
         {/* Main Title */}
         <motion.h1
