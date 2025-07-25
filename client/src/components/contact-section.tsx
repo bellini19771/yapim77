@@ -97,44 +97,41 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref}>
       <div className="container mx-auto px-6">
-        {/* Language Switcher - Always visible regardless of language */}
-        <div className="flex justify-center mb-16">
-          <div className="flex items-center space-x-3 bg-gray-800/90 rounded-xl p-4 border border-cinema-gold/30 backdrop-blur-sm">
-            <span className="text-cinema-gold font-semibold text-lg mr-2">
-              {language === 'tr' ? 'DİL:' : 'LANGUAGE:'}
-            </span>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 ${
-                language === 'en' 
-                  ? 'bg-cinema-gold text-black shadow-xl scale-105' 
-                  : 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-500'
-              }`}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLanguage('tr')}
-              className={`px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 ${
-                language === 'tr' 
-                  ? 'bg-cinema-gold text-black shadow-xl scale-105' 
-                  : 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-500'
-              }`}
-            >
-              TR
-            </button>
-          </div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            {t("contact.title")} <span className="cinema-gold">{t("contact.titleHighlight")}</span>
-          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+            <h2 className="font-playfair text-4xl md:text-6xl font-bold">
+              {t("contact.title")} <span className="cinema-gold">{t("contact.titleHighlight")}</span>
+            </h2>
+            
+            {/* Language Switcher inline with title */}
+            <div className="flex items-center space-x-2 bg-gray-800/90 rounded-lg p-3 border border-cinema-gold/30">
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-4 py-2 rounded-md font-bold text-sm transition-all duration-300 ${
+                  language === 'en' 
+                    ? 'bg-cinema-gold text-black shadow-lg' 
+                    : 'bg-gray-700 text-white hover:bg-gray-600'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLanguage('tr')}
+                className={`px-4 py-2 rounded-md font-bold text-sm transition-all duration-300 ${
+                  language === 'tr' 
+                    ? 'bg-cinema-gold text-black shadow-lg' 
+                    : 'bg-gray-700 text-white hover:bg-gray-600'
+                }`}
+              >
+                TR
+              </button>
+            </div>
+          </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {t("contact.subtitle")}
           </p>
