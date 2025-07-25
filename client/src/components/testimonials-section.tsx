@@ -1,30 +1,36 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star } from "lucide-react";
+import { Camera, Film, Palette, Award } from "lucide-react";
 
-export default function TestimonialsSection() {
+export default function TeamSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const testimonials = [
+  const teamMembers = [
     {
-      quote: "77 Yapım transformed our vision into a cinematic masterpiece. Their attention to detail and creative approach exceeded all expectations.",
-      author: "Michael Chen",
-      position: "Creative Director, Luna Studios",
+      name: "Ahmet Kaya",
+      position: "Creative Director & Founder",
+      specialty: "Cinematic Storytelling",
+      bio: "With over 15 years in film production, Ahmet leads our creative vision and ensures every project tells a compelling story.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      icon: Film,
     },
     {
-      quote: "The animation quality and storytelling prowess of 77 Yapım is unmatched. They brought our characters to life beautifully.",
-      author: "Sarah Johnson",
-      position: "Producer, Dreamworks Animation",
+      name: "Zeynep Demir",
+      position: "Lead Animator",
+      specialty: "3D Animation & VFX",
+      bio: "A master of bringing characters to life, Zeynep's animations have won multiple international awards for their artistic excellence.",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b29c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      icon: Palette,
     },
     {
-      quote: "Professional, innovative, and incredibly talented. 77 Yapım delivered a commercial campaign that drove exceptional results.",
-      author: "David Rodriguez",
-      position: "Marketing Director, Global Brands Inc.",
+      name: "Emre Özkan",
+      position: "Director of Photography",
+      specialty: "Cinematography & Lighting",
+      bio: "Emre's keen eye for visual composition and mastery of light creates the stunning cinematography that defines our productions.",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      icon: Camera,
     },
   ];
 
@@ -38,42 +44,39 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            What <span className="cinema-gold">Clients</span> Say
+            Our <span className="cinema-gold">Team</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what industry leaders and clients have to say about working with 77 Yapım.
+            Meet the creative minds behind 77 Yapım. Our talented team of directors, animators, and cinematographers bring years of expertise to every project.
           </p>
         </motion.div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {teamMembers.map((member, index) => (
             <motion.div
-              key={testimonial.author}
+              key={member.name}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700"
+              className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cinema-gold/50 transition-all duration-300"
             >
-              <div className="flex items-center mb-6">
-                <div className="flex cinema-gold">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} fill="currentColor" />
-                  ))}
+              <div className="text-center mb-6">
+                <img
+                  src={member.avatar}
+                  alt={member.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-cinema-gold/30"
+                />
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-cinema-gold/20 rounded-full">
+                    <member.icon className="w-6 h-6 cinema-gold" />
+                  </div>
                 </div>
               </div>
-              <blockquote className="text-lg text-gray-300 mb-6 italic leading-relaxed">
-                "{testimonial.quote}"
-              </blockquote>
-              <div className="flex items-center">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.author}
-                  className="w-12 h-12 rounded-full mr-4 object-cover"
-                />
-                <div>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-gray-400">{testimonial.position}</div>
-                </div>
+              <div className="text-center">
+                <h3 className="font-semibold text-xl mb-2">{member.name}</h3>
+                <p className="text-cinema-gold font-medium mb-2">{member.position}</p>
+                <p className="text-sm text-gray-400 mb-4">{member.specialty}</p>
+                <p className="text-gray-300 leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
           ))}
