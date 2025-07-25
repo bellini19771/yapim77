@@ -28,7 +28,7 @@ export default function Clapperboard() {
             {/* 77 Yapım logo on clapperboard */}
             <div className="absolute inset-2 flex items-center justify-center">
               <img 
-                src="/attached_assets/77yapim_1753430498708.png" 
+                src="/attached_assets/77yapim_1753431232617.png" 
                 alt="77 Yapım" 
                 className="w-16 h-auto opacity-80"
               />

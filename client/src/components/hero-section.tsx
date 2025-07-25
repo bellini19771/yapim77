@@ -25,11 +25,25 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Clapperboard with Ladybug */}
+        {/* 77 Yapım Logo */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          className="flex justify-center mb-8"
+        >
+          <img 
+            src="/attached_assets/77yapim_1753431232617.png" 
+            alt="77 Yapım Logo" 
+            className="h-24 md:h-32 lg:h-40 w-auto"
+          />
+        </motion.div>
+
+        {/* Clapperboard */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="flex justify-center mb-8"
         >
           <Clapperboard />
@@ -39,7 +53,7 @@ export default function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 1, delay: 0.4 }}
           className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-off-white"
         >
           <span className="block cinema-gold">Crafting</span>

@@ -49,7 +49,7 @@ export default function Navigation() {
           >
             <div className="flex items-center">
               <img 
-                src="/attached_assets/77yapim_1753430498708.png" 
+                src="/attached_assets/77yapim_1753431232617.png" 
                 alt="77 Yapım Logo" 
                 className="h-12 w-auto"
               />

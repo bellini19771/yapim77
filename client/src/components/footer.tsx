@@ -38,7 +38,7 @@ export default function Footer() {
           >
             <div className="flex items-center mb-4">
               <img 
-                src="/attached_assets/77yapim_1753430498708.png" 
+                src="/attached_assets/77yapim_1753431232617.png" 
                 alt="77 Yapım Logo" 
                 className="h-10 w-auto"
               />
