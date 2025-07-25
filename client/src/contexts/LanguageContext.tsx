@@ -18,10 +18,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
     
     // Hero Section
-    "hero.crafting": "Sinematik",
-    "hero.cinematic": "Hikayeler",
-    "hero.stories": "Yaratıyoruz",
-    "hero.subtitle": "Son teknoloji animasyon, etkileyici filmler ve yenilikçi ticari yapımlar aracılığıyla fikirleri güçlü görsel anlatılara dönüştürüyoruz.",
+    "hero.crafting": "Crafting",
+    "hero.cinematic": "Cinematic",
+    "hero.stories": "Stories",
+    "hero.subtitle": "We transform ideas into powerful visual narratives through cutting-edge animation, compelling films, and innovative commercial productions.",
     "hero.getStarted": "Başlayalım",
     "hero.viewWork": "Çalışmalarımızı İnceleyin",
     
