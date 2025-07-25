@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Linkedin } from "lucide-react";
 import { FaVimeo } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
+import logoPath from "@assets/77yapim.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const services = [
-    "Film Production",
-    "Animation",
+    t("services.film.title"),
+    t("services.animation.title"),
     "Post-Production",
-    "Commercials",
+    t("services.commercial.title"),
   ];
 
   const company = [
-    "About Us",
-    "Our Team",
-    "Careers",
-    "News",
+    t("footer.company.about"),
+    t("footer.company.careers"),
+    t("footer.company.news"),
+    t("footer.company.contact"),
   ];
 
   const socialLinks = [
@@ -38,9 +41,9 @@ export default function Footer() {
           >
             <div className="flex items-center mb-4">
               <img 
-                src="/attached_assets/77yapim_1753431232617.png" 
+                src={logoPath} 
                 alt="77 Yapım Logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-gray-400 mb-4">
@@ -65,7 +68,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">{t("footer.services.title")}</h4>
             <ul className="space-y-2 text-gray-400">
               {services.map((service) => (
                 <li key={service}>
@@ -83,7 +86,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">{t("footer.company.title")}</h4>
             <ul className="space-y-2 text-gray-400">
               {company.map((item) => (
                 <li key={item}>
@@ -111,7 +114,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} 77 Yapım. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; {currentYear} 77 Yapım. {t("footer.rights")} | Privacy Policy | Terms of Service</p>
         </div>
       </div>
     </footer>
