@@ -18,12 +18,12 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
     
     // Hero Section
-    "hero.crafting": "Crafting",
-    "hero.cinematic": "Cinematic",
-    "hero.stories": "Stories",
-    "hero.subtitle": "We transform ideas into powerful visual narratives through cutting-edge animation, compelling films, and innovative commercial productions.",
-    "hero.getStarted": "Get Started",
-    "hero.viewWork": "View Our Work",
+    "hero.crafting": "Sinematik",
+    "hero.cinematic": "Hikayeler",
+    "hero.stories": "Yaratıyoruz",
+    "hero.subtitle": "Son teknoloji animasyon, etkileyici filmler ve yenilikçi ticari yapımlar aracılığıyla fikirleri güçlü görsel anlatılara dönüştürüyoruz.",
+    "hero.getStarted": "Başlayalım",
+    "hero.viewWork": "Çalışmalarımızı İnceleyin",
     
     // Services Section
     "services.title": "Our",
@@ -178,9 +178,9 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.form.messagePlaceholder": "Lütfen proje vizyonunuz, zaman çizelgeniz ve özel gereksinimleriniz hakkında bilgi verin...",
     "contact.form.submit": "Mesaj Gönder",
     "contact.form.sending": "Gönderiliyor...",
-    "contact.info.address": "İstanbul, Türkiye",
-    "contact.info.phone": "+90 (212) 555-0123",
-    "contact.info.email": "merhaba@77yapim.com",
+        "contact.address": "İstanbul, Türkiye",
+    "contact.phone": "Telefon",
+    "contact.email": "E-posta",
     
     // Footer
     "footer.services.title": "Hizmetler",
