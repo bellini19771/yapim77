@@ -47,13 +47,12 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-4"
           >
-            <div className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-off-white rounded-lg flex items-center justify-center">
-                <span className="text-deep-black font-bold text-xl">77</span>
-              </div>
-              <div>
-                <span className="text-xl font-playfair font-bold cinema-gold">YAPIM</span>
-              </div>
+            <div className="flex items-center">
+              <img 
+                src="/attached_assets/77yapim_1753430498708.png" 
+                alt="77 Yapım Logo" 
+                className="h-12 w-auto"
+              />
             </div>
           </motion.div>
 

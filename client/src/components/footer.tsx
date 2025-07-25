@@ -36,11 +36,12 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-off-white rounded-lg flex items-center justify-center">
-                <span className="text-deep-black font-bold text-lg">77</span>
-              </div>
-              <span className="text-lg font-playfair font-bold cinema-gold">YAPIM</span>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/attached_assets/77yapim_1753430498708.png" 
+                alt="77 Yapım Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-gray-400 mb-4">
               Crafting cinematic stories that captivate audiences and inspire emotions through film and animation excellence.
