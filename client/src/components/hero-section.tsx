@@ -26,23 +26,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* 77 Yapım Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.2, type: "spring", bounce: 0.3 }}
-          className="flex justify-center mb-12"
-        >
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-cinema-gold/30 to-cinema-gold/60 blur-2xl rounded-full scale-125 opacity-0 group-hover:opacity-100 transition-all duration-1000"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-cinema-gold/10 to-transparent blur-lg opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
-            <img 
-              src={logoPath} 
-              alt="77 Yapım Logo" 
-              className="relative h-32 md:h-40 lg:h-52 w-auto logo-artistic animate-logo-float filter brightness-0 invert opacity-95"
-            />
-          </div>
-        </motion.div>
+
 
         
         
