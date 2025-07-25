@@ -50,9 +50,6 @@ export default function AboutSection() {
               ))}
             </div>
             
-            <Button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
-              Meet Our Team
-            </Button>
           </motion.div>
           
           <motion.div

@@ -47,7 +47,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-4">
-              Crafting cinematic stories that captivate audiences and inspire emotions through film and animation excellence.
+              {t("footer.description")}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -104,9 +104,9 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">{t("footer.company.contact")}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Istanbul, Turkey</li>
+              <li>{t("contact.info.address")}</li>
               <li>+90 (212) 555-0123</li>
               <li>hello@77yapim.com</li>
             </ul>
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} 77 Yapım. {t("footer.rights")} | Privacy Policy | Terms of Service</p>
+          <p>&copy; {currentYear} 77 Yapım. {t("footer.rights")} | {t("footer.privacy")} | {t("footer.terms")}</p>
         </div>
       </div>
     </footer>

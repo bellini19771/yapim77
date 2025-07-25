@@ -92,6 +92,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.info.email": "hello@77yapim.com",
     
     // Footer
+    "footer.description": "Crafting cinematic stories that captivate audiences and inspire emotions through film and animation excellence.",
     "footer.services.title": "Services",
     "footer.company.title": "Company",
     "footer.company.about": "About Us",
@@ -99,6 +100,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.company.news": "News",
     "footer.company.contact": "Contact",
     "footer.rights": "All rights reserved.",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
   },
   tr: {
     // Navigation
@@ -183,6 +186,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.email": "E-posta",
     
     // Footer
+    "footer.description": "Film ve animasyon alanındaki mükemmellik ile izleyicileri büyüleyen ve duyguları harekete geçiren sinematik hikayeler üretiyoruz.",
     "footer.services.title": "Hizmetler",
     "footer.company.title": "Şirket",
     "footer.company.about": "Hakkımızda",
@@ -190,6 +194,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.company.news": "Haberler",
     "footer.company.contact": "İletişim",
     "footer.rights": "Tüm hakları saklıdır.",
+    "footer.privacy": "Gizlilik Politikası",
+    "footer.terms": "Hizmet Şartları",
   }
 };
 
