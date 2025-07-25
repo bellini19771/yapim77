@@ -5,37 +5,41 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <section className="py-16 bg-deep-black border-t border-gray-800">
+    <section className="py-16 bg-red-900 border-t-4 border-red-600" style={{ minHeight: '200px' }}>
       <div className="container mx-auto px-6">
+        <h2 className="text-center text-white text-2xl mb-8">Language Switcher</h2>
         <div className="flex justify-center">
-          <div className="flex items-center space-x-2 bg-gray-800/80 rounded-lg p-2 border border-gray-600">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setLanguage('en')}
-              className={`px-6 py-3 rounded-md font-bold text-base transition-all duration-300 ${
+          <div className="flex items-center space-x-2 bg-white/20 rounded-lg p-4 border-2 border-yellow-400">
+            <button
+              onClick={() => {
+                console.log('EN clicked');
+                setLanguage('en');
+              }}
+              className={`px-8 py-4 rounded-md font-bold text-xl border-2 transition-all duration-300 ${
                 language === 'en' 
-                  ? 'bg-cinema-gold text-black shadow-lg scale-105' 
-                  : 'text-gray-300 hover:text-white hover:bg-gray-700/70'
+                  ? 'bg-yellow-500 text-black border-yellow-600 shadow-lg' 
+                  : 'text-white border-white hover:bg-white/20'
               }`}
             >
               EN
-            </motion.button>
+            </button>
             
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setLanguage('tr')}
-              className={`px-6 py-3 rounded-md font-bold text-base transition-all duration-300 ${
+            <button
+              onClick={() => {
+                console.log('TR clicked');
+                setLanguage('tr');
+              }}
+              className={`px-8 py-4 rounded-md font-bold text-xl border-2 transition-all duration-300 ${
                 language === 'tr' 
-                  ? 'bg-cinema-gold text-black shadow-lg scale-105' 
-                  : 'text-gray-300 hover:text-white hover:bg-gray-700/70'
+                  ? 'bg-yellow-500 text-black border-yellow-600 shadow-lg' 
+                  : 'text-white border-white hover:bg-white/20'
               }`}
             >
               TR
-            </motion.button>
+            </button>
           </div>
         </div>
+        <p className="text-center text-white mt-4">Current language: {language}</p>
       </div>
     </section>
   );

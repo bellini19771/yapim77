@@ -14,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -30,6 +31,7 @@ export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const { toast } = useToast();
+  const { language, setLanguage } = useLanguage();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -95,6 +97,34 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref}>
       <div className="container mx-auto px-6">
+        {/* Language Switcher */}
+        <div className="flex justify-center mb-12">
+          <div className="flex items-center space-x-4 bg-yellow-500 rounded-lg p-4 border-4 border-red-500" style={{minHeight: '80px'}}>
+            <h3 className="text-black text-xl mr-4">LANGUAGE:</h3>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-6 py-3 rounded font-bold text-lg border-2 ${
+                language === 'en' 
+                  ? 'bg-green-500 text-white border-green-700' 
+                  : 'bg-gray-200 text-black border-gray-400'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('tr')}
+              className={`px-6 py-3 rounded font-bold text-lg border-2 ${
+                language === 'tr' 
+                  ? 'bg-green-500 text-white border-green-700' 
+                  : 'bg-gray-200 text-black border-gray-400'
+              }`}
+            >
+              TR
+            </button>
+            <span className="text-black text-lg ml-4">Current: {language}</span>
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
