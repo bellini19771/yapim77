@@ -13,12 +13,6 @@ export default function Clapperboard() {
         <div className="w-32 h-24 relative">
           {/* Top clapper */}
           <div className="absolute -top-3 left-0 right-0 h-3 bg-gray-800 rounded-t border border-gray-600 relative">
-            {/* Clapper stripes */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-black to-white" 
-                 style={{
-                   background: "repeating-linear-gradient(90deg, #fff 0%, #fff 15%, #000 15%, #000 30%)",
-                 }}
-            />
           </div>
           
           {/* Main board */}
