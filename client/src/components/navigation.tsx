@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoPath from "@assets/77yapim.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,9 +50,9 @@ export default function Navigation() {
           >
             <div className="flex items-center">
               <img 
-                src="/attached_assets/77yapim_1753431232617.png" 
+                src={logoPath} 
                 alt="77 Yapım Logo" 
-                className="h-12 w-auto"
+                className="h-12 w-auto hover:scale-105 transition-transform duration-300"
               />
             </div>
           </motion.div>

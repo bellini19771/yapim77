@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoPath from "@assets/77yapim.png";
 
 
 export default function HeroSection() {
@@ -33,9 +34,9 @@ export default function HeroSection() {
           className="flex justify-center mb-8"
         >
           <img 
-            src="/attached_assets/77yapim_1753431232617.png" 
+            src={logoPath} 
             alt="77 Yapım Logo" 
-            className="h-24 md:h-32 lg:h-40 w-auto"
+            className="h-24 md:h-32 lg:h-40 w-auto filter drop-shadow-2xl"
           />
         </motion.div>
 
