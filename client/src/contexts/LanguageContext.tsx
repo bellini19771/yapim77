@@ -22,8 +22,8 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cinematic": "Cinematic",
     "hero.stories": "Stories",
     "hero.subtitle": "We transform ideas into powerful visual narratives through cutting-edge animation, compelling films, and innovative commercial productions.",
-    "hero.getStarted": "Başlayalım",
-    "hero.viewWork": "Çalışmalarımızı İnceleyin",
+    "hero.getStarted": "Get Started",
+    "hero.viewWork": "View Our Work",
     
     // Services Section
     "services.title": "Our",
