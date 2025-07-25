@@ -52,7 +52,7 @@ export default function Navigation() {
               <img 
                 src={logoPath} 
                 alt="77 Yapım Logo" 
-                className="h-12 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-10 w-auto logo-elegant filter brightness-0 invert"
               />
             </div>
           </motion.div>

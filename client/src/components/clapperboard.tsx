@@ -18,14 +18,14 @@ export default function Clapperboard() {
           
           {/* Main board */}
           <div
-            className="w-full h-full border-2 border-gray-600 rounded-sm relative bg-slate-200"
+            className="w-full h-full border-2 border-gray-600 rounded-sm relative bg-gradient-to-br from-slate-100 to-slate-300"
           >
             {/* 77 Yapım logo on clapperboard */}
             <div className="absolute inset-2 flex items-center justify-center">
               <img 
                 src={logoPath} 
                 alt="77 Yapım" 
-                className="w-16 h-auto opacity-80"
+                className="w-10 h-auto logo-cinematic filter brightness-0 opacity-80"
               />
             </div>
             
