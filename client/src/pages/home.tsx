@@ -17,7 +17,7 @@ export default function Home() {
       <PortfolioSection />
       <AboutSection />
       <TeamSection />
-      <LanguageSwitcher />
+
       <ContactSection />
       <Footer />
     </div>

@@ -31,7 +31,7 @@ export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const { toast } = useToast();
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -72,18 +72,18 @@ export default function ContactSection() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Studio Location",
-      value: "Istanbul, Turkey",
+      title: language === 'tr' ? "Stüdyo Konumu" : "Studio Location",
+      value: t("contact.info.address"),
     },
     {
       icon: Phone,
-      title: "Phone",
-      value: "+90 (212) 555-0123",
+      title: language === 'tr' ? "Telefon" : "Phone",
+      value: t("contact.info.phone"),
     },
     {
       icon: Mail,
       title: "Email",
-      value: "hello@77yapim.com",
+      value: t("contact.info.email"),
     },
   ];
 
@@ -97,31 +97,32 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref}>
       <div className="container mx-auto px-6">
-        {/* Language Switcher */}
-        <div className="flex justify-center mb-12">
-          <div className="flex items-center space-x-4 bg-yellow-500 rounded-lg p-4 border-4 border-red-500" style={{minHeight: '80px'}}>
-            <h3 className="text-black text-xl mr-4">LANGUAGE:</h3>
+        {/* Language Switcher - Always visible regardless of language */}
+        <div className="flex justify-center mb-16">
+          <div className="flex items-center space-x-3 bg-gray-800/90 rounded-xl p-4 border border-cinema-gold/30 backdrop-blur-sm">
+            <span className="text-cinema-gold font-semibold text-lg mr-2">
+              {language === 'tr' ? 'DİL:' : 'LANGUAGE:'}
+            </span>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-6 py-3 rounded font-bold text-lg border-2 ${
+              className={`px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 ${
                 language === 'en' 
-                  ? 'bg-green-500 text-white border-green-700' 
-                  : 'bg-gray-200 text-black border-gray-400'
+                  ? 'bg-cinema-gold text-black shadow-xl scale-105' 
+                  : 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-500'
               }`}
             >
               EN
             </button>
             <button
               onClick={() => setLanguage('tr')}
-              className={`px-6 py-3 rounded font-bold text-lg border-2 ${
+              className={`px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 ${
                 language === 'tr' 
-                  ? 'bg-green-500 text-white border-green-700' 
-                  : 'bg-gray-200 text-black border-gray-400'
+                  ? 'bg-cinema-gold text-black shadow-xl scale-105' 
+                  : 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-500'
               }`}
             >
               TR
             </button>
-            <span className="text-black text-lg ml-4">Current: {language}</span>
           </div>
         </div>
 
@@ -132,10 +133,10 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            Start Your <span className="cinema-gold">Project</span>
+            {t("contact.title")} <span className="cinema-gold">{t("contact.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to bring your vision to life? Get in touch with our team to discuss your next film or animation project.
+            {t("contact.subtitle")}
           </p>
         </motion.div>
         
