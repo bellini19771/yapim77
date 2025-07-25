@@ -48,11 +48,13 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-4"
           >
-            <div className="flex items-center">
+            <div className="flex items-center relative">
+              <div className="absolute inset-0 bg-gradient-radial from-transparent via-deep-black/30 to-deep-black/60 blur-xl scale-200 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-deep-black/80 blur-2xl scale-175 pointer-events-none"></div>
               <img 
                 src={logoPath} 
                 alt="77 Yapım Logo" 
-                className="h-16 w-auto logo-elegant filter brightness-0 invert opacity-85 hover:opacity-100"
+                className="relative h-16 w-auto logo-elegant logo-blend filter brightness-0 invert opacity-85 hover:opacity-100"
               />
             </div>
           </motion.div>

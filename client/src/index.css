@@ -153,6 +153,16 @@
   .logo-cinematic:hover {
     filter: sepia(0) contrast(1.3) brightness(1.2) drop-shadow(0 0 25px rgba(255, 215, 0, 0.4));
   }
+
+  /* Gradient utilities */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  .logo-blend {
+    mask: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
 }
 
 /* Custom Animations */
