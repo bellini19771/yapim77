@@ -11,13 +11,13 @@ import LanguageSwitcher from "@/components/language-switcher";
 export default function Home() {
   return (
     <div className="min-h-screen bg-deep-black text-off-white overflow-x-hidden">
-      <LanguageSwitcher />
       <Navigation />
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
       <AboutSection />
       <TeamSection />
+      <LanguageSwitcher />
       <ContactSection />
       <Footer />
     </div>
