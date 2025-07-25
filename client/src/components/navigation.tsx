@@ -41,12 +41,12 @@ export default function Navigation() {
         isScrolled ? "glass-effect border-b border-gray-800" : ""
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-1">
         <div className="flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-4"
+            className="flex items-center"
           >
             <div className="flex items-center relative">
               <div className="absolute inset-0 bg-gradient-radial from-transparent via-deep-black/30 to-deep-black/60 blur-xl scale-200 pointer-events-none"></div>
