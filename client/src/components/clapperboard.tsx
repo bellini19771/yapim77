@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import LadybugAnimation from "./ladybug-animation";
 
 export default function Clapperboard() {
   return (
@@ -43,9 +42,6 @@ export default function Clapperboard() {
             </div>
           </div>
         </div>
-        
-        {/* Ladybug Animation */}
-        <LadybugAnimation />
       </motion.div>
     </div>
   );
