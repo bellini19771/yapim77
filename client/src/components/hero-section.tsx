@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logoPath from "@assets/77yapim.png";
 
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+  
   const scrollToNext = () => {
     const servicesSection = document.getElementById("services");
     if (servicesSection) {
@@ -37,9 +40,9 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-off-white"
         >
-          <span className="block cinema-gold">Crafting</span>
-          <span className="block">Cinematic</span>
-          <span className="block">Stories</span>
+          <span className="block cinema-gold">{t("hero.crafting")}</span>
+          <span className="block">{t("hero.cinematic")}</span>
+          <span className="block">{t("hero.stories")}</span>
         </motion.h1>
         
         {/* Subtitle */}
@@ -49,7 +52,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto leading-relaxed"
         >
-          From award-winning films to groundbreaking animations, 77 Yapım brings stories to life with passion, precision, and artistic excellence.
+{t("hero.subtitle")}
         </motion.p>
         
         {/* CTA Buttons */}
@@ -63,14 +66,14 @@ export default function HeroSection() {
             onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
             className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
           >
-            View Our Work
+{t("hero.viewWork")}
           </Button>
           <Button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             variant="outline"
             className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
           >
-            Start Your Project
+{t("hero.getStarted")}
           </Button>
         </motion.div>
       </div>

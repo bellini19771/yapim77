@@ -6,10 +6,12 @@ import AboutSection from "@/components/about-section";
 import TeamSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import LanguageSwitcher from "@/components/language-switcher";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-deep-black text-off-white overflow-x-hidden">
+      <LanguageSwitcher />
       <Navigation />
       <HeroSection />
       <ServicesSection />

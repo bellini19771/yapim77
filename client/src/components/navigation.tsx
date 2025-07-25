@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logoPath from "@assets/77yapim.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,11 +28,11 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "services", label: "Services" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: t("nav.home") },
+    { id: "portfolio", label: t("nav.portfolio") },
+    { id: "services", label: t("nav.services") },
+    { id: "about", label: t("nav.about") },
+    { id: "contact", label: t("nav.contact") },
   ];
 
   return (

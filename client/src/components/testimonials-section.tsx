@@ -2,33 +2,35 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Camera, Film, Palette, Award } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TeamSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { t } = useLanguage();
 
   const teamMembers = [
     {
-      name: "Ahmet Kaya",
-      position: "Creative Director & Founder",
-      specialty: "Cinematic Storytelling",
-      bio: "With over 15 years in film production, Ahmet leads our creative vision and ensures every project tells a compelling story.",
+      name: t("team.ahmet.name"),
+      position: t("team.ahmet.position"),
+      specialty: t("team.ahmet.specialty"),
+      bio: t("team.ahmet.bio"),
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
       icon: Film,
     },
     {
-      name: "Zeynep Demir",
-      position: "Lead Animator",
-      specialty: "3D Animation & VFX",
-      bio: "A master of bringing characters to life, Zeynep's animations have won multiple international awards for their artistic excellence.",
+      name: t("team.zeynep.name"),
+      position: t("team.zeynep.position"),
+      specialty: t("team.zeynep.specialty"),
+      bio: t("team.zeynep.bio"),
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b29c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
       icon: Palette,
     },
     {
-      name: "Emre Özkan",
-      position: "Director of Photography",
-      specialty: "Cinematography & Lighting",
-      bio: "Emre's keen eye for visual composition and mastery of light creates the stunning cinematography that defines our productions.",
+      name: t("team.emre.name"),
+      position: t("team.emre.position"),
+      specialty: t("team.emre.specialty"),
+      bio: t("team.emre.bio"),
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
       icon: Camera,
     },
@@ -44,10 +46,10 @@ export default function TeamSection() {
           className="text-center mb-16"
         >
           <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="cinema-gold">Team</span>
+            {t("team.title")} <span className="cinema-gold">{t("team.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Meet the creative minds behind 77 Yapım. Our talented team of directors, animators, and cinematographers bring years of expertise to every project.
+            {t("team.subtitle")}
           </p>
         </motion.div>
         
