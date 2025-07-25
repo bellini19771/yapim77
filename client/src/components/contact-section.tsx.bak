@@ -1,0 +1,261 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import          <h2 className="font-playfair text-4xl md:text-6xl font-bold">
+            {t("contact.title")} <span className="cinema-gold">{t("contact.titleHighlight")}</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
+            {t("contact.subtitle")}
+          </p>Ref } from "react";
+import { MapPin, Phone, Mail, Instagram, Twitter, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { FaVimeo } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+
+const contactSchema = z.object({
+  firstName: z.string().min(1, "Ad alanı zorunludur"),
+  lastName: z.string().min(1, "Soyad alanı zorunludur"),
+  email: z.string().email("Geçerli bir e-posta adresi giriniz"),
+  projectType: z.string().min(1, "Lütfen bir proje türü seçiniz"),
+  budget: z.string().min(1, "Lütfen bir bütçe aralığı seçiniz"),
+  message: z.string().min(10, "Mesaj en az 10 karakter olmalıdır"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
+export default function ContactSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { toast } = useToast();
+  const { t } = useLanguage();
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      projectType: "",
+      budget: "",
+      message: "",
+    },
+  });
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: ContactFormData) => apiRequest("POST", "/api/contact", data),
+    onSuccess: () => {
+      toast({
+        title: "Mesajınız başarıyla gönderildi!",
+        description: "24 saat içinde size geri dönüş yapacağız.",
+      });
+      form.reset();
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Mesaj gönderilemedi",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => contactMutation.mutate(data);
+
+  const contactInfo = [
+    { icon: MapPin, title: t("contact.info.address"), value: t("contact.info.address") },
+    { icon: Phone, title: t("contact.info.phone"), value: t("contact.info.phone") },
+    { icon: Mail, title: t("contact.info.email"), value: t("contact.info.email") },
+  ];
+
+  const socialLinks = [
+    { icon: Instagram, href: "#" },
+    { icon: Twitter, href: "#" },
+    { icon: Linkedin, href: "#" },
+    { icon: FaVimeo, href: "#" },
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref}>
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-playfair text-4xl md:text-6xl font-bold">
+            Get in <span className="cinema-gold">Touch</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6">
+            Let’s collaborate on your next project. Share your ideas and we’ll help bring them to life.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h3 className="font-playfair text-3xl font-bold mb-8">{t("contact.subtitle")}</h3>
+            <div className="space-y-6 mb-8">
+              {contactInfo.map((info, i) => (
+                <motion.div
+                  key={info.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                  className="flex items-center space-x-4"
+                >
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                    <info.icon className="text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold">{info.title}</div>
+                    <div className="text-gray-400">{info.value}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.3, delay: 0.8 + i * 0.1 }}
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                >
+                  <social.icon className="text-xl" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700"
+          >
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {['firstName', 'lastName'].map((field) => (
+                    <FormField
+                      key={field}
+                      control={form.control}
+                      name={field as keyof ContactFormData}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-semibold">
+                            {field.name === 'firstName' ? t("contact.form.firstName") : t("contact.form.lastName")}
+                          </FormLabel>
+                          <FormControl>
+                            <Input {...field} className="bg-gray-700 border-gray-600 focus:border-primary" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  ))}
+                </div>
+
+                {['email', 'message'].map((fieldName) => (
+                  <FormField
+                    key={fieldName}
+                    control={form.control}
+                    name={fieldName as keyof ContactFormData}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-semibold">
+                          {fieldName === 'email' ? t("contact.form.email") : t("contact.form.message")}
+                        </FormLabel>
+                        <FormControl>
+                          {fieldName === 'message' ? (
+                            <Textarea
+                              {...field}
+                              rows={5}
+                              placeholder={t("contact.form.messagePlaceholder")}
+                              className="bg-gray-700 border-gray-600 focus:border-primary resize-none"
+                            />
+                          ) : (
+                            <Input {...field} className="bg-gray-700 border-gray-600 focus:border-primary" />
+                          )}
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                ))}
+
+                {[{
+                  name: 'projectType',
+                  label: 'Project Type',
+                  options: [
+                    ['film-production', 'Film Production'],
+                    ['animation', 'Animation'],
+                    ['commercial', 'Commercial'],
+                    ['post-production', 'Post-Production'],
+                    ['other', 'Other'],
+                  ]
+                }, {
+                  name: 'budget',
+                  label: 'Budget Range',
+                  options: [
+                    ['10k-50k', '$10,000 - $50,000'],
+                    ['50k-100k', '$50,000 - $100,000'],
+                    ['100k-500k', '$100,000 - $500,000'],
+                    ['500k+', '$500,000+'],
+                  ]
+                }].map((selectField) => (
+                  <FormField
+                    key={selectField.name}
+                    control={form.control}
+                    name={selectField.name as keyof ContactFormData}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-semibold">{t(`contact.form.${selectField.name}`)}</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-gray-700 border-gray-600 focus:border-primary">
+                              <SelectValue placeholder={t(`contact.form.${selectField.name}Placeholder`)} />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {selectField.options.map(([val, label]) => (
+                              <SelectItem key={val} value={val}>{label}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                ))}
+
+                <Button
+                  type="submit"
+                  disabled={contactMutation.isPending}
+                  className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+                >
+                  {contactMutation.isPending ? t("contact.form.sending") : t("contact.form.submit")}
+                </Button>
+              </form>
+            </Form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

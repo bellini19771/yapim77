@@ -2,48 +2,67 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PortfolioSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeFilter, setActiveFilter] = useState("All");
+  const { t, language } = useLanguage();
 
-  const filters = ["All", "Films", "Animation", "Commercials"];
+  const filters = [
+    { en: "All", tr: "Tümü" },
+    { en: "Films", tr: "Filmler" },
+    { en: "Animation", tr: "Animasyon" },
+    { en: "Commercials", tr: "Reklamlar" }
+  ];
 
   const portfolioItems = [
     {
-      title: "The Last Symphony",
-      description: "Award-winning drama about a composer's final masterpiece",
+      title: language === 'tr' ? "Son Senfoni" : "The Last Symphony",
+      description: language === 'tr' 
+        ? "Ödüllü drama: Bir bestecinin son başyapıtı" 
+        : "Award-winning drama about a composer's final masterpiece",
       category: "Films",
       image: "https://images.unsplash.com/photo-1489599735946-957e3ab41adf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: "Magic Realms",
-      description: "3D animated series exploring mystical worlds",
+      title: language === 'tr' ? "Sihirli Diyarlar" : "Magic Realms",
+      description: language === 'tr'
+        ? "Mistik dünyaları keşfeden 3D animasyon serisi"
+        : "3D animated series exploring mystical worlds",
       category: "Animation",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: "Luxury Brand Campaign",
-      description: "High-end commercial series for premium automotive brand",
+      title: language === 'tr' ? "Lüks Marka Kampanyası" : "Luxury Brand Campaign",
+      description: language === 'tr'
+        ? "Premium otomotiv markası için yüksek kaliteli reklam serisi"
+        : "High-end commercial series for premium automotive brand",
       category: "Commercials",
       image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: "Untold Stories",
-      description: "Documentary series exploring hidden histories",
+      title: language === 'tr' ? "Gizli Hikayeler" : "Untold Stories",
+      description: language === 'tr'
+        ? "Saklı tarihleri keşfeden belgesel serisi"
+        : "Documentary series exploring hidden histories",
       category: "Films",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: "Dreamscape",
-      description: "Artistic animated short exploring human consciousness",
+      title: language === 'tr' ? "Rüya Manzarası" : "Dreamscape",
+      description: language === 'tr'
+        ? "İnsan bilincini keşfeden sanatsal kısa animasyon"
+        : "Artistic animated short exploring human consciousness",
       category: "Animation",
       image: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: "Rhythm & Light",
-      description: "Music video series blending visual artistry with sound",
+      title: language === 'tr' ? "Ritim & Işık" : "Rhythm & Light",
+      description: language === 'tr'
+        ? "Görsel sanatı sesle harmanlayan müzik video serisi"
+        : "Music video series blending visual artistry with sound",
       category: "Commercials",
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
@@ -63,26 +82,26 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
           <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
-            <span className="cinema-gold">Featured</span> Works
+            <span className="cinema-gold">{t("portfolio.title")}</span> {t("portfolio.titleHighlight")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            A showcase of our most celebrated projects that demonstrate our commitment to storytelling excellence and technical innovation.
+            {t("portfolio.subtitle")}
           </p>
           
           {/* Portfolio Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {filters.map((filter) => (
               <Button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
+                key={filter[language === 'tr' ? 'tr' : 'en']}
+                onClick={() => setActiveFilter(filter.en)}
                 className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                  activeFilter === filter
+                  activeFilter === filter.en
                     ? "bg-primary text-primary-foreground"
                     : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 }`}
-                variant={activeFilter === filter ? "default" : "outline"}
+                variant={activeFilter === filter.en ? "default" : "outline"}
               >
-                {filter}
+                {filter[language === 'tr' ? 'tr' : 'en']}
               </Button>
             ))}
           </div>

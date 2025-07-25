@@ -3,19 +3,21 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { t } = useLanguage();
 
   const stats = [
-    { number: "50+", label: "Projects Completed" },
-    { number: "15+", label: "Awards Won" },
-    { number: "8", label: "Years Experience" },
+    { number: "50+", label: t("about.projects") },
+    { number: "15+", label: t("about.awards") },
+    { number: "8", label: t("about.experience") },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref}>
+    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref} key={t("about.title")}>
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -24,13 +26,13 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-8">
-              <span className="cinema-gold">Our</span> Story
+              <span className="cinema-gold">{t("about.title")}</span> {t("about.titleHighlight")}
             </h2>
             <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-              Founded with a passion for storytelling, 77 Yapım has grown from a small creative collective into one of the most respected production studios in the industry.
+              {t("about.subtitle")}
             </p>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              We believe that every story deserves to be told with authenticity, creativity, and technical excellence. Our team of award-winning directors, animators, and producers work tirelessly to bring visions to life, whether it's a feature film, animated series, or commercial campaign.
+              {t("about.description")}
             </p>
             
             <div className="grid grid-cols-3 gap-8 mb-8">
