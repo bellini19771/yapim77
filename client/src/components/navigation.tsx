@@ -54,7 +54,7 @@ export default function Navigation() {
               <img 
                 src={logoPath} 
                 alt="77 Yapım Logo" 
-                className="relative h-24 w-auto logo-elegant logo-blend filter brightness-0 invert opacity-85 hover:opacity-100"
+                className="relative h-28 w-auto logo-elegant logo-blend filter brightness-0 invert opacity-85 hover:opacity-100"
               />
             </div>
           </motion.div>
