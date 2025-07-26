@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Instagram, Twitter, Linkedin } from "lucide-react";
 import { FaVimeo } from "react-icons/fa";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logoPath from "@assets/77yapim.webp";
+import logoPath from "@assets/77yapim.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

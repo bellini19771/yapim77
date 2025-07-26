@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logoPath from "@assets/77yapim.webp";
+import logoPath from "@assets/77yapim.png";
 
 export default function Clapperboard() {
   return (

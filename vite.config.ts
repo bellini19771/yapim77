@@ -8,11 +8,11 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "attached_assets"),
+      "@assets": path.resolve(__dirname, "client", "src", "assets"),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: "../dist",
     emptyOutDir: true,
   },
 });

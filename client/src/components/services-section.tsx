@@ -20,7 +20,7 @@ export default function ServicesSection() {
       icon: Palette,
       title: t("services.animation.title"),
       description: t("services.animation.desc"),
-      image: "/src/assets/3d-character.webp",
+      image: "/assets/3d-character.png",
     },
     {
       icon: Scissors,
