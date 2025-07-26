@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logoPath from "@assets/77yapim.png";
+import logoPath from "@assets/77yapim.webp";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/u2349418/public_html/
+    - /bin/cp -R client/dist/* $DEPLOYPATH
+    # Gerekirse başka dosya veya klasörleri de ekleyebilirsiniz

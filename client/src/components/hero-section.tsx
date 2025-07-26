@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logoPath from "@assets/77yapim.png";
+import logoPath from "@assets/77yapim.webp";
 
 
 export default function HeroSection() {
