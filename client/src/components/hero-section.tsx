@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoPath from "@assets/77yapim.png";
+import montaj6 from "@/assets/montaj6.png";
 
 
 export default function HeroSection() {
@@ -21,7 +22,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 parallax-bg"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+          backgroundImage: `url(${montaj6})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}

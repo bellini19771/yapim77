@@ -3,6 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Video, Palette, Scissors } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import character3d from "@/assets/3d-character.png";
+import montaj1 from "@/assets/montaj1.png";
+import montaj4 from "@/assets/montaj4.png";
 
 export default function ServicesSection() {
   const ref = useRef(null);
@@ -14,19 +17,19 @@ export default function ServicesSection() {
       icon: Video,
       title: t("services.film.title"),
       description: t("services.film.desc"),
-      image: "https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: montaj4,
     },
     {
       icon: Palette,
       title: t("services.animation.title"),
       description: t("services.animation.desc"),
-      image: "/assets/3d-character.png",
+      image: character3d,
     },
     {
       icon: Scissors,
       title: t("services.commercial.title"),
       description: t("services.commercial.desc"),
-      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: montaj1,
     },
   ];
 
