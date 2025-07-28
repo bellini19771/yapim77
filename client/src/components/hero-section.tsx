@@ -3,7 +3,8 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoPath from "@assets/77yapim.png";
-import montaj6 from "@/assets/montaj6.png";
+import montaj5 from "@/assets/montaj5.png";
+import ladybug from "@/assets/ladybug.png";
 
 
 export default function HeroSection() {
@@ -22,7 +23,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 parallax-bg"
         style={{
-          backgroundImage: `url(${montaj6})`,
+          backgroundImage: `url(${montaj5})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -30,10 +31,6 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-
-
-        
-        
         {/* Main Title */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}

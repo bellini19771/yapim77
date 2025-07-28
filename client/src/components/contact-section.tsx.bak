@@ -71,7 +71,7 @@ export default function ContactSection() {
   const onSubmit = (data: ContactFormData) => contactMutation.mutate(data);
 
   const contactInfo = [
-    { icon: MapPin, title: t("contact.info.address"), value: t("contact.info.address") },
+    { icon: MapPin, title: t("Next Level Loft Ofis NO:4 KAT:27 İÇ KAPI NO:72 Çankaya/ANKARA"), value: t("Next Level Loft Ofis NO:4 KAT:27 İÇ KAPI NO:72 Çankaya/ANKARA") },
     { icon: Phone, title: t("contact.info.phone"), value: t("contact.info.phone") },
     { icon: Mail, title: t("contact.info.email"), value: t("contact.info.email") },
   ];

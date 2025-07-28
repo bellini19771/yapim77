@@ -106,9 +106,9 @@ export default function Footer() {
           >
             <h4 className="font-semibold mb-4">{t("footer.company.contact")}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>{t("contact.info.address")}</li>
-              <li>+90 (212) 555-0123</li>
-              <li>hello@77yapim.com</li>
+              <li>{t("Next Level Loft Ofis NO:4 KAT:27 İÇ KAPI NO:72 Çankaya/ANKARA")}</li>
+              <li>+90 (312) 949 03 20</li>
+              <li>info@77yapim.com</li>
             </ul>
           </motion.div>
         </div>

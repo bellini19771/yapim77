@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoPath from "@assets/77yapim.png";
+import ladybug from "@/assets/ladybug.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,11 +55,18 @@ export default function Navigation() {
             <div className="flex items-center relative">
               <div className="absolute inset-0 bg-gradient-radial from-transparent via-deep-black/30 to-deep-black/60 blur-xl scale-200 pointer-events-none"></div>
               <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-deep-black/80 blur-2xl scale-175 pointer-events-none"></div>
-              <img
-                src={logoPath}
-                alt="77 Yapım Logo"
-                className="relative h-40 w-auto logo-elegant logo-blend filter brightness-0 invert opacity-85 hover:opacity-100"
-              />
+              <div className="relative">
+                <img
+                  src={logoPath}
+                  alt="77 Yapım Logo"
+                  className="relative h-40 w-auto logo-elegant logo-blend filter brightness-0 invert opacity-85 hover:opacity-100"
+                />
+                <img
+                  src={ladybug}
+                  alt="Ladybug"
+                  className="absolute -bottom-6 left-44 h-16 w-auto transition-transform duration-300 hover:scale-110"
+                />
+              </div>
             </div>
           </motion.div>
 

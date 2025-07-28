@@ -20,7 +20,6 @@ const contactSchema = z.object({
   lastName: z.string().min(1, "Soyad alanı zorunludur"),
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
   projectType: z.string().min(1, "Lütfen bir proje türü seçiniz"),
-  budget: z.string().min(1, "Lütfen bir bütçe aralığı seçiniz"),
   message: z.string().min(10, "Mesaj en az 10 karakter olmalıdır"),
 });
 
@@ -39,7 +38,6 @@ export default function ContactSection() {
       lastName: "",
       email: "",
       projectType: "",
-      budget: "",
       message: "",
     },
   });
@@ -65,9 +63,9 @@ export default function ContactSection() {
   const onSubmit = (data: ContactFormData) => contactMutation.mutate(data);
 
   const contactInfo = [
-    { icon: MapPin, title: t("contact.info.address.title"), value: t("contact.info.address.value") },
-    { icon: Phone, title: t("contact.info.phone.title"), value: t("contact.info.phone.value") },
-    { icon: Mail, title: t("contact.info.email.title"), value: t("contact.info.email.value") },
+    { icon: MapPin, title: t("Next Level Loft Ofis NO:4 KAT:27 İÇ KAPI NO:72 Çankaya/ANKARA"), value: t("") },
+    { icon: Phone, title: t("+90 (312) 949 03 20"), value: t("") },
+    { icon: Mail, title: t("info@77yapim.com"), value: t("") },
   ];
 
   const socialLinks = [
@@ -171,29 +169,7 @@ export default function ContactSection() {
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="budget"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.budget")}</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder={t("contact.form.budgetPlaceholder")} />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="small">{t("contact.form.budgets.small")}</SelectItem>
-                              <SelectItem value="medium">{t("contact.form.budgets.medium")}</SelectItem>
-                              <SelectItem value="large">{t("contact.form.budgets.large")}</SelectItem>
-                              <SelectItem value="custom">{t("contact.form.budgets.custom")}</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+
                   </div>
 
                   <FormField
@@ -249,7 +225,7 @@ export default function ContactSection() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">{t("contact.social.title")}</h4>
+              <h4 className="text-lg font-semibold mb-4">{t("77 Yapım (@77yapim)")}</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((link, index) => (
                   <a
