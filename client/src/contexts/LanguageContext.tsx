@@ -41,8 +41,8 @@ const translations: Record<Language, Record<string, string>> = {
     "services.documentary.desc": "Compelling documentary storytelling that informs, inspires, and creates lasting impact.",
     
     // Portfolio Section
-    "portfolio.title": "Featured",
-    "portfolio.titleHighlight": "Projects",
+    "portfolio.title": "Projects",
+    "portfolio.titleHighlight": "That Our Team is Part of",
     "portfolio.subtitle": "Explore our diverse portfolio of award-winning films, animations, and commercial productions that showcase our creative excellence.",
     
     // About Section
@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     "services.documentary.desc": "Bilgilendiren, ilham veren ve kalıcı etki yaratan etkileyici belgesel hikaye anlatımı.",
     
     // Portfolio Section
-    "portfolio.title": "Öne Çıkan",
+    "portfolio.title": "Ekibimizin Dahil Olduğu",
     "portfolio.titleHighlight": "Projeler",
     "portfolio.subtitle": "Yaratıcı mükemmelliğimizi sergileyen ödüllü filmler, animasyonlar ve ticari yapımlardan oluşan çeşitli portföyümüzü keşfedin.",
     

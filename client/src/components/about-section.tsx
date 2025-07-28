@@ -16,6 +16,12 @@ export default function AboutSection() {
     { number: "8", label: t("about.experience") },
   ];
 
+  /* const teamMembers = [
+    { number: "50+", label: t("about.projects") },
+    { number: "15+", label: t("about.awards") },
+    { number: "8", label: t("about.experience") },
+  ]; */
+
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref} key={t("about.title")}>
       <div className="container mx-auto px-6">
@@ -49,8 +55,28 @@ export default function AboutSection() {
                 </motion.div>
               ))}
             </div>
-            
           </motion.div>
+
+          {/* Ekibimiz (team) bölümü:
+              team.titleHighlight
+              77 Yapım'ın arkasındaki yaratıcı zihinlerle tanışın. Yetenekli yönetmen, animatör ve sinematograf ekibimiz her projeye yıllarca deneyim katıyor.
+
+              Belin Çelebi
+              Kreatif Direktör & Kurucu
+              team.Belin.specialty
+              team.Belin.bio
+
+              Ekip1
+              Baş Animatör
+              3D Animasyon & VFX
+              Karakterleri hayata geçirme ustası olan Ekip1'in animasyonları artistik mükemmelliği için birçok uluslararası ödül kazanmıştır.
+
+              Ekip2
+              Görüntü Yönetmeni
+              Sinematografi & Işık
+              Ekip2'nin görsel kompozisyona olan keskin bakışı ve ışık ustalığı, yapımlarımızı tanımlayan çarpıcı sinematografiyi yaratıyor.
+          */}
+            
           
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -59,9 +85,9 @@ export default function AboutSection() {
             className="relative"
           >
             <img
-              src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
-              alt="Professional film production team collaborating on set"
-              className="rounded-2xl shadow-2xl w-full"
+              src="/attached_assets/77yapim.png"
+              alt="77 Yapım etkinlik görüntüsü"
+              className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
             />
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary rounded-xl flex items-center justify-center">
               <Award className="text-primary-foreground text-3xl" />

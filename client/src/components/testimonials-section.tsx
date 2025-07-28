@@ -9,7 +9,7 @@ export default function TeamSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const { t } = useLanguage();
 
-  const teamMembers = [
+  /* const teamMembers = [
     {
       name: t("team.producer.name"),
       position: t("Yapımcı"),
@@ -34,7 +34,7 @@ export default function TeamSection() {
       avatar: "",
       icon: Camera,
     },
-  ];
+  ]; */
 
   return (
     <section className="py-20 bg-deep-black" ref={ref}>
@@ -45,15 +45,15 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
+          {/* <h2 className="font-playfair text-4xl md:text-6xl font-bold mb-6">
             {t("team.title")} <span className="cinema-gold">{t("team.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {t("team.subtitle")}
-          </p>
+          </p> */}
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* <div className="grid md:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -82,7 +82,7 @@ export default function TeamSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
