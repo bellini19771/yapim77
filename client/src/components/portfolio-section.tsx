@@ -12,34 +12,36 @@ export default function PortfolioSection() {
 
   const filters = [
     { en: "All", tr: "Tümü" },
-    { en: "Films", tr: "Filmler" },
-    { en: "Animation", tr: "Animasyon" },
-    { en: "Commercials", tr: "Reklamlar" }
+    { en: "TV Productions", tr: "TV Yapımları" },
+    { en: "Public Service Announcement", tr: "Kamu Spotu" },
+    { en: "Commercials", tr: "Reklamlar" },
+    { en: "Narration", tr: "Seslendirme" },
+    { en: "Event hosting", tr: "Sunuculuk" },
   ];
 
   const portfolioItems = [
     {
-      title: language === 'tr' ? "Son Senfoni" : "The Last Symphony",
+      title: language === 'tr' ? "Dünya Mutfaklarından" : "From World Cuisines",
       description: language === 'tr' 
-        ? "Ödüllü drama: Bir bestecinin son başyapıtı" 
-        : "Award-winning drama about a composer's final masterpiece",
-      category: "Films",
+        ? "Sevilen TV Serisi: Ünlü Şeflerle Dünya Mutfaklarından Özgün Lezzeteler" 
+        : "The beloved TV series: Authentic Flavors from World Cuisines with Famous Chefs.",
+      category: "TV Productions",
       image: "https://images.unsplash.com/photo-1489599735946-957e3ab41adf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: language === 'tr' ? "Sihirli Diyarlar" : "Magic Realms",
+      title: language === 'tr' ? "Sıradışı Pastalar" : "Extraordinary Cakes",
       description: language === 'tr'
-        ? "Mistik dünyaları keşfeden 3D animasyon serisi"
-        : "3D animated series exploring mystical worlds",
-      category: "Animation",
+        ? "Ünlü Pasta Şefleri İle Yaratıcı Pasta Tasarımları"
+        : "Creative Cake Designs with Famous Pastry Chefs",
+      category: "TV Productions",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {
-      title: language === 'tr' ? "Lüks Marka Kampanyası" : "Luxury Brand Campaign",
+      title: language === 'tr' ? "Göçmen Destekleme Projesi" : "Immigrant Support Project",
       description: language === 'tr'
         ? "Premium otomotiv markası için yüksek kaliteli reklam serisi"
         : "High-end commercial series for premium automotive brand",
-      category: "Commercials",
+      category: "Public Service",
       image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     },
     {

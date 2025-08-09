@@ -203,7 +203,7 @@ export default function ContactSection() {
                   name: 'projectType',
                   label: 'Project Type',
                   options: [
-                    ['film-production', 'Film Production'],
+                    ['film-production', 'Production'],
                     ['animation', 'Animation'],
                     ['commercial', 'Commercial'],
                     ['post-production', 'Post-Production'],
