@@ -26,7 +26,7 @@ export default function PortfolioSection() {
         ? "Sevilen TV Serisi: Ünlü Şeflerle Dünya Mutfaklarından Özgün Lezzeteler" 
         : "The beloved TV series: Authentic Flavors from World Cuisines with Famous Chefs.",
       category: "TV Productions",
-      image: "https://images.unsplash.com/photo-1489599735946-957e3ab41adf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
     {
       title: language === 'tr' ? "Sıradışı Pastalar" : "Extraordinary Cakes",
@@ -34,7 +34,7 @@ export default function PortfolioSection() {
         ? "Ünlü Pasta Şefleri İle Yaratıcı Pasta Tasarımları"
         : "Creative Cake Designs with Famous Pastry Chefs",
       category: "TV Productions",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
     {
       title: language === 'tr' ? "Göçmen Destekleme Projesi" : "Immigrant Support Project",
@@ -42,7 +42,7 @@ export default function PortfolioSection() {
         ? "Premium otomotiv markası için yüksek kaliteli reklam serisi"
         : "High-end commercial series for premium automotive brand",
       category: "Public Service",
-      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
     {
       title: language === 'tr' ? "Gizli Hikayeler" : "Untold Stories",
@@ -50,7 +50,7 @@ export default function PortfolioSection() {
         ? "Saklı tarihleri keşfeden belgesel serisi"
         : "Documentary series exploring hidden histories",
       category: "Films",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
     {
       title: language === 'tr' ? "Rüya Manzarası" : "Dreamscape",
@@ -58,7 +58,7 @@ export default function PortfolioSection() {
         ? "İnsan bilincini keşfeden sanatsal kısa animasyon"
         : "Artistic animated short exploring human consciousness",
       category: "Animation",
-      image: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
     {
       title: language === 'tr' ? "Ritim & Işık" : "Rhythm & Light",
@@ -66,7 +66,7 @@ export default function PortfolioSection() {
         ? "Görsel sanatı sesle harmanlayan müzik video serisi"
         : "Music video series blending visual artistry with sound",
       category: "Commercials",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "",
     },
   ];
 

@@ -15,7 +15,7 @@ export default function LadybugAnimation() {
 
   return (
     <motion.div
-      className="absolute w-6 h-6 -top-12 -left-32"
+      className="absolute w-3 h-3 -top-12 -left-32"
       initial={{ x: 0, y: 0, rotate: 0, opacity: 0 }}
       animate={hasAnimated ? {
         x: [0, 150, 300, 450, 520],
@@ -30,10 +30,10 @@ export default function LadybugAnimation() {
     >
       <div className="relative w-full h-full">
         {/* Ladybug body - more realistic design */}
-        <div className="relative w-6 h-6">
+        <div className="relative w-3 h-3">
           {/* Main body */}
           <div
-            className="w-6 h-6 relative"
+            className="w-3 h-3 relative"
             style={{
               background: "linear-gradient(135deg, #ff4444 0%, #cc0000 50%, #990000 100%)",
               borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
