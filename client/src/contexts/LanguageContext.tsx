@@ -43,7 +43,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio Section
     "portfolio.title": "Projects",
     "portfolio.titleHighlight": "That Our Team is Part of",
-    "portfolio.subtitle": "Explore our diverse portfolio of award-winning films, animations, and commercial productions that showcase our creative excellence.",
+    "portfolio.subtitle": "Explore our portfolio of productions and commercial works that showcase our creative excellence.",
     
     // About Section
     "about.title": "About",
@@ -139,7 +139,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio Section
     "portfolio.title": "Ekibimizin Dahil Olduğu",
     "portfolio.titleHighlight": "Projeler",
-    "portfolio.subtitle": "Yaratıcı mükemmelliğimizi sergileyen ödüllü filmler, animasyonlar ve ticari yapımlardan oluşan çeşitli portföyümüzü keşfedin.",
+    "portfolio.subtitle": "Yaratıcı mükemmelliğimizi sergileyen prodüksiyonlar ve ticari yapımlardan oluşan portföyümüzü keşfedin.",
     
     // About Section
     "about.title": "77 Yapım",

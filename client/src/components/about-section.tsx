@@ -13,12 +13,12 @@ export default function AboutSection() {
   const stats = [
     { number: "50+", label: t("about.projects") },
    /*{ number: "15+", label: t("about.awards") },*/
-    { number: "8", label: t("about.experience") },
+    { number: "20+", label: t("about.experience") },
   ];
 
   /* const teamMembers = [
     { number: "50+", label: t("about.projects") },
-    { number: "8", label: t("about.experience") },
+    { number: "20+", label: t("about.experience") },
   ]; */
 
   return (
