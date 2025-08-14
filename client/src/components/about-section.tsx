@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import etkinlik from "@/assets/etkinlik.png";
 
 export default function AboutSection() {
   const ref = useRef(null);
@@ -85,8 +86,8 @@ export default function AboutSection() {
             style={{ backgroundColor: '#000', minHeight: '600px' }}
           >
             <img
-              src="/attached_assets/77yapim.png"
-              alt="77 Yapım etkinlik görüntüsü"
+              src={etkinlik}
+              alt=""
               className="rounded-2xl shadow-2xl w-[110%] h-[110%] object-cover"
               style={{ objectFit: 'cover', width: '110%', height: '110%' }}
             />

@@ -6,6 +6,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import siradisiPastalar from "@/assets/siradisi_pastalar(800 x 600 px).png";
 import dunyaMutfaklarindan from "@/assets/dunya_mutfaklarindan(800x600px).png";
 import esitlik from "@/assets/esitlik.png";
+import reklam from "@/assets/reklam.png";
+import seslendirme from "@/assets/seslendirme.png";
+import sunuculuk from "@/assets/sunuculuk.png";
 
 export default function PortfolioSection() {
   const ref = useRef(null);
@@ -16,7 +19,7 @@ export default function PortfolioSection() {
   const filters = [
     { en: "All", tr: "Tümü" },
     { en: "TV Productions", tr: "TV Yapımları" },
-    { en: "Public Service Announcement", tr: "Kamu Spotu" },
+    { en: "Public Service", tr: "Kamu Projeleri" },
     { en: "Commercials", tr: "Reklamlar" },
     { en: "Narration", tr: "Seslendirme" },
     { en: "Event hosting", tr: "Sunuculuk" },
@@ -48,28 +51,28 @@ export default function PortfolioSection() {
       image: esitlik,
     },
     {
-      title: language === 'tr' ? "Gizli Hikayeler" : "Untold Stories",
+      title: language === 'tr' ? "Hizmet Sektörü Reklam Filmleri" : "Service Sector Commercial Films",
       description: language === 'tr'
-        ? "Saklı tarihleri keşfeden belgesel serisi"
-        : "Documentary series exploring hidden histories",
-      category: "Films",
-      image: "",
-    },
-    {
-      title: language === 'tr' ? "Rüya Manzarası" : "Dreamscape",
-      description: language === 'tr'
-        ? "İnsan bilincini keşfeden sanatsal kısa animasyon"
-        : "Artistic animated short exploring human consciousness",
-      category: "Animation",
-      image: siradisiPastalar,
-    },
-    {
-      title: language === 'tr' ? "Ritim & Işık" : "Rhythm & Light",
-      description: language === 'tr'
-        ? "Görsel sanatı sesle harmanlayan müzik video serisi"
-        : "Music video series blending visual artistry with sound",
+        ? "İşletmeniz hakettiği üne kavuşsun."
+        : "Let your business achieve the reputation it deserves.",
       category: "Commercials",
-      image: "",
+      image: reklam,
+    },
+    {
+      title: language === 'tr' ? "Hayallerinizin sesi olalım." : "Let’s be the voice of your dreams.",
+      description: language === 'tr'
+        ? "Reklam videolarından, kamu spotlarına, animasyonlardan, belgesellere siz isteyin profesyonel ekibimiz seslendirsin."
+        : "From commercial videos and public service announcements to animations and documentaries, just let us know—our professional team will provide the voiceover.",
+      category: "Narration",
+      image: seslendirme,
+    },
+    {
+      title: language === 'tr' ? "Sunmak bizim işimiz." : "Presenting is our job.",
+      description: language === 'tr'
+        ? "Bakanlıklar, belediyeler, üniversiteler ve özel sektördeki etkinlikleriniz için profesyonel sunuculuk hizmeti."
+        : "Professional hosting services for your events in ministries, municipalities, universities, and the private sector.",
+      category: "Event hosting",
+      image: sunuculuk,
     },
   ];
 
@@ -137,7 +140,7 @@ export default function PortfolioSection() {
                   <h3 className="font-playfair text-2xl font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-300 mb-4">{item.description}</p>
                   <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                    {item.category.slice(0, -1)}
+                    {language === 'tr' ? filters.find(f => f.en === item.category)?.tr : item.category}
                   </span>
                 </div>
               </div>
