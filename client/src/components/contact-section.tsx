@@ -43,17 +43,31 @@ export default function ContactSection() {
   });
 
   const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => apiRequest("POST", "/api/contact", data),
+    mutationFn: async (data: ContactFormData) => {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error('Form gönderilirken bir hata oluştu');
+      }
+
+      return response.json();
+    },
     onSuccess: () => {
       toast({
-        title: t("contact.success.title"),
-        description: t("contact.success.description"),
+        title: "Başarılı!",
+        description: "Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.",
       });
       form.reset();
     },
     onError: (error: Error) => {
       toast({
-        title: t("contact.error.title"),
+        title: "Hata!",
         description: error.message,
         variant: "destructive",
       });
@@ -107,9 +121,9 @@ export default function ContactSection() {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t("contact.form.firstName")}</FormLabel>
+                          <FormLabel className="text-gray-200">{t("contact.form.firstName")}</FormLabel>
                           <FormControl>
-                            <Input {...field} />
+                            <Input {...field} className="text-white bg-gray-800 border-gray-700 placeholder:text-gray-400" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -120,9 +134,9 @@ export default function ContactSection() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t("contact.form.lastName")}</FormLabel>
+                          <FormLabel className="text-gray-200">{t("contact.form.lastName")}</FormLabel>
                           <FormControl>
-                            <Input {...field} />
+                            <Input {...field} className="text-white bg-gray-800 border-gray-700 placeholder:text-gray-400" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -130,21 +144,19 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t("contact.form.email")}</FormLabel>
-                        <FormControl>
-                          <Input {...field} type="email" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-200">{t("contact.form.email")}</FormLabel>
+                          <FormControl>
+                            <Input {...field} type="email" className="text-white bg-gray-800 border-gray-700 placeholder:text-gray-400" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
                       name="projectType"
@@ -153,15 +165,15 @@ export default function ContactSection() {
                           <FormLabel>{t("contact.form.projectType")}</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder={t("contact.form.projectTypePlaceholder")} />
+                              <SelectTrigger className="text-white bg-gray-800 border-gray-700">
+                                <SelectValue placeholder={t("contact.form.projectTypePlaceholder")} className="text-gray-400" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
-                              <SelectItem value="film">{t("contact.form.projectTypes.film")}</SelectItem>
-                              <SelectItem value="commercial">{t("contact.form.projectTypes.commercial")}</SelectItem>
-                              <SelectItem value="music">{t("contact.form.projectTypes.music")}</SelectItem>
-                              <SelectItem value="other">{t("contact.form.projectTypes.other")}</SelectItem>
+                            <SelectContent className="bg-gray-800 border-gray-700">
+                              <SelectItem value="film" className="text-white hover:bg-gray-700">{t("contact.form.projectTypes.film")}</SelectItem>
+                              <SelectItem value="commercial" className="text-white hover:bg-gray-700">{t("contact.form.projectTypes.commercial")}</SelectItem>
+                              <SelectItem value="music" className="text-white hover:bg-gray-700">{t("contact.form.projectTypes.music")}</SelectItem>
+                              <SelectItem value="other" className="text-white hover:bg-gray-700">{t("contact.form.projectTypes.other")}</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />
@@ -172,25 +184,24 @@ export default function ContactSection() {
 
                   </div>
 
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t("contact.form.message")}</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            {...field}
-                            rows={6}
-                            placeholder={t("contact.form.messagePlaceholder")}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <Button
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-200">{t("contact.form.message")}</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              {...field}
+                              rows={6}
+                              placeholder={t("contact.form.messagePlaceholder")}
+                              className="text-white bg-gray-800 border-gray-700 placeholder:text-gray-400"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />                  <Button
                     type="submit"
                     className="w-full md:w-auto"
                     disabled={contactMutation.isPending}
