@@ -22,8 +22,8 @@ export default function AboutSection() {
   ]; */
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 to-deep-black" ref={ref} key={t("about.title")}>
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-black" ref={ref} key={t("about.title")}> 
+      <div className="container mx-auto px-6 bg-black rounded-2xl" style={{ backgroundColor: '#000' }}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -81,12 +81,14 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative flex items-center justify-center bg-black rounded-2xl overflow-hidden"
+            style={{ backgroundColor: '#000', minHeight: '600px' }}
           >
             <img
               src="/attached_assets/77yapim.png"
               alt="77 Yapım etkinlik görüntüsü"
-              className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
+              className="rounded-2xl shadow-2xl w-[110%] h-[110%] object-cover"
+              style={{ objectFit: 'cover', width: '110%', height: '110%' }}
             />
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary rounded-xl flex items-center justify-center">
               <Award className="text-primary-foreground text-3xl" />

@@ -64,7 +64,7 @@ export default function Navigation() {
                 <img
                   src={ladybug}
                   alt="Ladybug"
-                  className="absolute -bottom-6 left-44 h-16 w-auto transition-transform duration-300 hover:scale-110"
+                  className="absolute -bottom-6 left-44 h-10 w-auto transition-transform duration-300 hover:scale-110"
                 />
               </div>
             </div>

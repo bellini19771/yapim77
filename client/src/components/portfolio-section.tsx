@@ -3,6 +3,8 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import siradisiPastalar from "@/assets/siradisi_pastalar(800 x 600 px).png";
+import dunyaMutfaklarindan from "@/assets/dunya_mutfaklarindan(800x600px).png";
 
 export default function PortfolioSection() {
   const ref = useRef(null);
@@ -26,15 +28,15 @@ export default function PortfolioSection() {
         ? "Sevilen TV Serisi: Ünlü Şeflerle Dünya Mutfaklarından Özgün Lezzeteler" 
         : "The beloved TV series: Authentic Flavors from World Cuisines with Famous Chefs.",
       category: "TV Productions",
-      image: "",
-    },
+      image: dunyaMutfaklarindan,
+      },
     {
       title: language === 'tr' ? "Sıradışı Pastalar" : "Extraordinary Cakes",
       description: language === 'tr'
         ? "Ünlü Pasta Şefleri İle Yaratıcı Pasta Tasarımları"
         : "Creative Cake Designs with Famous Pastry Chefs",
       category: "TV Productions",
-      image: "",
+      image: siradisiPastalar,
     },
     {
       title: language === 'tr' ? "Göçmen Destekleme Projesi" : "Immigrant Support Project",
@@ -58,7 +60,7 @@ export default function PortfolioSection() {
         ? "İnsan bilincini keşfeden sanatsal kısa animasyon"
         : "Artistic animated short exploring human consciousness",
       category: "Animation",
-      image: "",
+      image: siradisiPastalar,
     },
     {
       title: language === 'tr' ? "Ritim & Işık" : "Rhythm & Light",
@@ -76,7 +78,7 @@ export default function PortfolioSection() {
 
   return (
     <section id="portfolio" className="py-20 bg-deep-black" ref={ref}>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 bg-deep-black">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -114,7 +116,7 @@ export default function PortfolioSection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 bg-deep-black"
         >
           {filteredItems.map((item, index) => (
             <motion.div
@@ -122,12 +124,12 @@ export default function PortfolioSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl hover-lift cursor-pointer"
+              className="group relative overflow-hidden rounded-xl hover-lift cursor-pointer aspect-[4/3] bg-deep-black"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-deep-black"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 right-6">
