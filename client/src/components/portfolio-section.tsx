@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import siradisiPastalar from "@/assets/siradisi_pastalar(800 x 600 px).png";
 import dunyaMutfaklarindan from "@/assets/dunya_mutfaklarindan(800x600px).png";
+import esitlik from "@/assets/esitlik.png";
 
 export default function PortfolioSection() {
   const ref = useRef(null);
@@ -39,12 +40,12 @@ export default function PortfolioSection() {
       image: siradisiPastalar,
     },
     {
-      title: language === 'tr' ? "Göçmen Destekleme Projesi" : "Immigrant Support Project",
+      title: language === 'tr' ? "Kadınlar İçin Daha Çok ve Daha İyi İşler" : "More and Better Jobs for Women",
       description: language === 'tr'
-        ? "Premium otomotiv markası için yüksek kaliteli reklam serisi"
-        : "High-end commercial series for premium automotive brand",
+        ? "Kadınların iş hayatında daha fazla ve daha iyi fırsatlar elde etmesi için yürütülen ILO Projesi"
+        : "The ILO Project carried out to ensure that women gain more and better opportunities in working life",
       category: "Public Service",
-      image: "",
+      image: esitlik,
     },
     {
       title: language === 'tr' ? "Gizli Hikayeler" : "Untold Stories",
